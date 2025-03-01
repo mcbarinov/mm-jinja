@@ -1,5 +1,5 @@
 from datetime import UTC, datetime
-from typing import NoReturn
+from typing import Any, NoReturn
 
 
 def utc_now() -> datetime:
@@ -10,7 +10,7 @@ def raise_(msg: str) -> NoReturn:
     raise RuntimeError(msg)
 
 
-MM_JINJA_GLOBALS = {
+MM_JINJA_GLOBALS: dict[str, Any] = {
     "raise": raise_,
     "utc_now": utc_now,
 }

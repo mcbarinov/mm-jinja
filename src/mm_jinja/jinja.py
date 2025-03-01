@@ -9,7 +9,7 @@ from mm_jinja.globals import MM_JINJA_GLOBALS
 
 def init_jinja(
     loader: BaseLoader,
-    custom_globals: dict[str, Callable[..., Any]] | None = None,
+    custom_globals: dict[str, Any] | None = None,
     custom_filters: dict[str, Callable[..., Any]] | None = None,
 ) -> Environment:
     env = Environment(loader=loader, autoescape=True)
