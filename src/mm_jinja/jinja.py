@@ -1,3 +1,5 @@
+"""Jinja2 environment initialization with pre-configured filters and globals."""
+
 from collections.abc import Callable
 from typing import Any
 
@@ -13,6 +15,7 @@ def init_jinja(
     custom_filters: dict[str, Callable[..., Any]] | None = None,
     enable_async: bool = False,
 ) -> Environment:
+    """Initialize a Jinja2 environment with pre-configured filters and globals."""
     env = Environment(loader=loader, autoescape=True, enable_async=enable_async)
     env.filters |= MM_JINJA_FILTERS
     env.globals |= MM_JINJA_GLOBALS
